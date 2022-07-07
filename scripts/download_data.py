@@ -1,4 +1,5 @@
 import scanpy as sc
+import sys
 
 def download_data(dataset):
     """Download and return specified dataset."""
@@ -19,6 +20,6 @@ if __name__ == '__main__':
         snakemake = None
     if snakemake is not None:
         # download specified dataset
-        adata = download_data()
+        adata = download_data(snakemake.params["dataset"])
         # write dataset to a specified '.h5ad' file
-        adata.write()
+        adata.write(snakemake.output["out"])

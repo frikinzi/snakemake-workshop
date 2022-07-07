@@ -10,9 +10,11 @@
 # allowable: paul, moignard, pbmc3k
 rule download_data:
     output:
-        "pbmc3k.h5ad"
+        out = "pbmc3k.h5ad"
+    params:
+        dataset = "pbmc3k"
     script:
-        "download_data.py"
+        "scripts/download_data.py"
 
 # This rule should preprocess downloaded data by calling the `preprocess.py`
 # Python script.
@@ -20,7 +22,9 @@ rule download_data:
 # of provided parameters as explained in the github issue. The rule should write
 # the newly processed data to a new `.h5ad` file. 
 rule preprocess_data:
-
+    # input:
+    #     "pbmc3k.h5ad"
+    # params:
 
 # This rule should cluster cells using the `cluster_cells.py` script.
 # rule should read in preprocessed data, and clsuter cells according to user-
