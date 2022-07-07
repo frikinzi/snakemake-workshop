@@ -1,5 +1,5 @@
 # Pipeline to download, preprocess, cluster, and plot cells in example scRNAseq data
-# @authors: Dakota Hawkins and Emma Briars
+# @authors: Laila Norford, Angela Jiang, Ashley Eng
 
 
 # This should call the download_data.py Python script to download data.
